@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Button from '../Button';
 import Input from '../InputText';
-import {login} from '../../api/login';
+import {login} from '../../api/api';
 import {Container} from './styles';
 
 const LoginForm = () => {

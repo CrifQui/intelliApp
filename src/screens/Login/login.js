@@ -1,7 +1,7 @@
 import React from 'react';
 import Form from '../../components/LoginForm';
 import Header from '../../components/HeaderLogin';
-import {Container} from './styles';
+import Container from '../../components/ContainerScreen';
 
 const Login = () => (
   <Container>
