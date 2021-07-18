@@ -5,6 +5,7 @@ const Container = styled.SafeAreaView`
   border-bottom-color: #63a6f5;
   flex: 1;
   align-items: center;
+  justify-content: center;
 `;
 
 export default Container;

@@ -6,6 +6,18 @@
  * @flow strict-local
  */
 
-// import React from 'react';
+import React from 'react';
+import AppProvider from './src/contexts/contextProvider';
+import Stack from './src/navigation/core';
 
-export {default} from './storybook';
+const App = () => {
+  return (
+    <AppProvider>
+      <Stack />
+    </AppProvider>
+  );
+};
+
+export default App;
+
+// export {default} from './storybook';

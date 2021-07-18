@@ -1,9 +1,13 @@
 import React from 'react';
 import Proptypes from 'prop-types';
 import {Modal, Alert} from 'react-native';
-import {ModalContainer, Overlay, Content} from './styles';
+import Close from '../../../public/close.svg';
+import {ModalContainer, Overlay, Content, Touchable} from './styles';
 
 const ModalCustom = ({visible, setVisible, children}) => {
+  const handleClose = () => {
+    setVisible(false);
+  };
   return (
     <ModalContainer>
       <Modal
@@ -15,7 +19,12 @@ const ModalCustom = ({visible, setVisible, children}) => {
           setVisible(!visible);
         }}>
         <Overlay>
-          <Content>{children}</Content>
+          <Content>
+            <Touchable onPress={() => handleClose()}>
+              <Close fill={'#6889B1'} />
+            </Touchable>
+            {children}
+          </Content>
         </Overlay>
       </Modal>
     </ModalContainer>
