@@ -2,13 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Input} from './styles';
 
-const InputText = ({placeholder, value, setValue, secureTextEntry, error}) => {
+const InputText = ({
+  placeholder,
+  value,
+  setValue,
+  secureTextEntry,
+  error,
+  width,
+}) => {
   const handleChange = text => {
     setValue(text);
   };
 
   return (
     <Input
+      width={width}
       textAlign={'center'}
       secureTextEntry={secureTextEntry}
       selectTextOnFocus={true}
@@ -23,10 +31,11 @@ const InputText = ({placeholder, value, setValue, secureTextEntry, error}) => {
 };
 
 InputText.propTypes = {
-  placeholder: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
+  value: PropTypes.string,
   secureTextEntry: PropTypes.bool,
-  error: PropTypes.bool.isRequired,
+  error: PropTypes.bool,
+  width: PropTypes.string,
 };
 
 export default InputText;

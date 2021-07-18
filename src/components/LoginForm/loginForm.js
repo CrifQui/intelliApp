@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useState, useEffect, useContext} from 'react';
 import Button from '../Button';
 import Input from '../InputText';
@@ -11,7 +12,7 @@ const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [data, setData] = useState([]);
   const [password, setPassword] = useState();
-  const {setIsAuth} = useContext(Context);
+  const {setIsAuth, setToken} = useContext(Context);
   const [inputError, setInputError] = useState(false);
   const {error, loadData, errorMessage} = useGetData();
 
@@ -24,7 +25,8 @@ const LoginForm = () => {
 
   useEffect(() => {
     data?.token && setIsAuth(true);
-  }, [data, setIsAuth]);
+    data?.token && setToken(data?.token);
+  }, [data?.token]);
 
   useEffect(() => {
     setInputError(error);

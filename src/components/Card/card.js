@@ -17,12 +17,12 @@ const Card = ({title, subtitle, image, width, height, handlePress, id}) => (
 );
 
 Card.propTypes = {
-  handlePress: PropTypes.func.isRequired,
+  handlePress: PropTypes.func,
   subtitle: PropTypes.string,
   width: PropTypes.string,
   height: PropTypes.string,
   title: PropTypes.string,
-  id: PropTypes.number.isRequired,
+  id: PropTypes.number,
 };
 
 export default Card;

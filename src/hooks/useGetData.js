@@ -8,14 +8,17 @@ const useGetData = () => {
   const loadData = async (getData, param, setData) => {
     setLoading(true);
     const result = await getData(param);
-    console.log(result.data);
     if (result.status === 200) {
       setData(result.data);
-    }
-    if (result.status === 400) {
+    } else if (result.status === 400) {
       setError(true);
       setErrorMessage(result.data.message[0]);
+    } else if (result.status === 401) {
+      setErrorMessage({email: `${result.data.error} - ${result.data.msg}`});
+      setError(true);
+      console.log(result.data);
     }
+    setLoading(false);
   };
 
   return {loading, error, errorMessage, loadData};

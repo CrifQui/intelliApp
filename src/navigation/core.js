@@ -7,6 +7,7 @@ import {MarvelStack} from './marvelStack';
 import {HomeStack} from './homeStack';
 import {LoginStack} from './loginStack';
 import {MapStack} from './mapStack';
+import {DevicesStack} from './devicesStack';
 import {LightTheme} from '../utils/themes';
 
 const Drawer = createDrawerNavigator();
@@ -20,6 +21,7 @@ const DrawerStack = () => {
         <Drawer.Navigator>
           <Drawer.Screen name={'Home'} component={HomeStack} />
           <Drawer.Screen name={'Marvel'} component={MarvelStack} />
+          <Drawer.Screen name={'Devices'} component={DevicesStack} />
           <Drawer.Screen
             name={'Map'}
             component={MapStack}

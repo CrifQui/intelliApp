@@ -20,7 +20,7 @@ const Menu = () => {
         <Icon fill={'#000'} width="50" />
       </Touchable>
       <Touchable onPress={() => handleMapPress()}>
-        <Map fill={'#63A6F5'} width="35" />
+        <Map fill={'#63A6F5'} width="25" />
       </Touchable>
     </Container>
   );

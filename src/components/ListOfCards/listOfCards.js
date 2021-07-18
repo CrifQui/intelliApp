@@ -8,7 +8,7 @@ const ListOfCards = ({data, handlePress}) => {
   return (
     <FlatList
       data={data}
-      keyExtractor={item => item.id}
+      keyExtractor={item => item?.id}
       renderItem={item => {
         return (
           <Content>
@@ -16,7 +16,7 @@ const ListOfCards = ({data, handlePress}) => {
               id={item?.item?.id}
               height={'300px'}
               title={item?.item?.name}
-              subtitle={`comic #${item?.item?.comics.available}`}
+              subtitle={`comic #${item?.item?.comics?.available}`}
               handlePress={handlePress}
               image={{
                 uri: `${item?.item?.thumbnail?.path}.${item?.item?.thumbnail?.extension}`,

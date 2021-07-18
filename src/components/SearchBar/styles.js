@@ -3,6 +3,7 @@ import Search from '../../../public/search.svg';
 
 export const Container = styled.View`
   position: relative;
+  align-items: flex-end;
 `;
 
 export const SearchIcon = styled(Search)`
