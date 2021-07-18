@@ -43,6 +43,7 @@ yarn android
 Para que la app funcione correctamente necesita crear el archivo config.js en src/
 Este archivo debe contener las url de las apis y las keys para marvel api de la siguiente manera
 
+```
 export const config = {
   URL_INTELLI_API: 'https://api.myintelli.net/v1',
   URL_MARVEL: 'https://gateway.marvel.com',
@@ -50,5 +51,5 @@ export const config = {
   MARVEL_PRIVATE_KEY: 'your private key',
   TS: 'marvel_api',
 };
-
+```
 Solo cambia las Marvel Keys y listo.
