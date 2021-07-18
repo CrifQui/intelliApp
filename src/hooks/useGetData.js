@@ -16,7 +16,6 @@ const useGetData = () => {
     } else if (result.status === 401) {
       setErrorMessage({email: `${result.data.error} - ${result.data.msg}`});
       setError(true);
-      console.log(result.data);
     }
     setLoading(false);
   };

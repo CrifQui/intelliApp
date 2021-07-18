@@ -15,7 +15,6 @@ export const login = async credentials => {
     return {data: response.data, status: response.status};
   } catch (err) {
     if (err.response) {
-      console.log(err.response);
       return {data: err.response.data, status: err.response.status};
     } else if (err.request) {
       console.err('error internet');
@@ -68,7 +67,6 @@ export const getCharacter = async id => {
 
 export const getDevices = async ({token, query, offset}) => {
   try {
-    console.log(token);
     const response = await axios.get(`${URL_INTELLI_API}/devices`, {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -80,7 +78,6 @@ export const getDevices = async ({token, query, offset}) => {
         search: query.toUpperCase(),
       },
     });
-    console.log(response.data.data);
     return {data: response.data.data, status: response.status};
   } catch (err) {
     if (err.response) {

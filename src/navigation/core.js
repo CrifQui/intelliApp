@@ -1,4 +1,5 @@
 import React, {useContext} from 'react';
+import {useTranslation} from 'react-i18next';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {NavigationContainer} from '@react-navigation/native';
 import {useColorScheme} from 'react-native';
@@ -12,6 +13,7 @@ import {LightTheme} from '../utils/themes';
 
 const Drawer = createDrawerNavigator();
 const DrawerStack = () => {
+  const {t} = useTranslation('common');
   const scheme = useColorScheme();
   const {isAuth} = useContext(Context);
 
@@ -19,9 +21,15 @@ const DrawerStack = () => {
     <NavigationContainer theme={scheme === 'light' && LightTheme}>
       {isAuth ? (
         <Drawer.Navigator>
-          <Drawer.Screen name={'Home'} component={HomeStack} />
-          <Drawer.Screen name={'Marvel'} component={MarvelStack} />
-          <Drawer.Screen name={'Devices'} component={DevicesStack} />
+          <Drawer.Screen name={t('@menu-screen-home')} component={HomeStack} />
+          <Drawer.Screen
+            name={t('@menu-screen-marvel')}
+            component={MarvelStack}
+          />
+          <Drawer.Screen
+            name={t('@menu-screen-devices')}
+            component={DevicesStack}
+          />
           <Drawer.Screen
             name={'Map'}
             component={MapStack}

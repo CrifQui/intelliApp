@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, {useCallback, useContext, useState} from 'react';
+import {useTranslation} from 'react-i18next';
 import {useFocusEffect} from '@react-navigation/native';
 import {getDevices} from '../../api/api';
 import {Context} from '../../contexts/contextProvider';
@@ -9,6 +10,7 @@ import Button from '../../components/Button';
 import Container from '../../components/ContainerScreen';
 
 const Devices = () => {
+  const {t} = useTranslation();
   const [data, setData] = useState([]);
   const [res, setRes] = useState([]);
   const [offset, setOffset] = useState(0);
@@ -27,11 +29,6 @@ const Devices = () => {
     }, [res]),
   );
 
-  useFocusEffect(
-    useCallback(() => {
-      console.log(data);
-    }, [data]),
-  );
   const handlePress = () => {
     setOffset(value => value + 5);
     loadData(getDevices, {token, offset, query}, setRes);
@@ -40,7 +37,7 @@ const Devices = () => {
   return (
     <Container>
       <ListOfDevices data={data} />
-      <Button handlePress={handlePress} text={'Get more devices'} />
+      <Button handlePress={handlePress} text={t('@devices-get-devices')} />
     </Container>
   );
 };

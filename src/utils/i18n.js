@@ -1,25 +1,28 @@
 import i18n from 'i18next';
 import {initReactI18next} from 'react-i18next';
-import './assets/locales/fr/common.json';
 
 const translationsGetters = {
-  fr: () => require('./assets/locales/fr/common.json'),
+  es: () => require('../../public/locales/es/common.json'),
+  en: () => require('../../public/locales/en/common.json'),
 };
 
 i18n.use(initReactI18next).init({
   debug: false,
-  lng: 'fr',
-  fallbackLng: 'fr',
+  lng: 'es',
+  fallbackLng: 'es',
   ns: ['common'],
   defaultNS: 'common',
-  preload: ['en'],
+  preload: ['es'],
   keySeparator: false,
   interpolation: {
     escapeValue: false,
   },
   resources: {
-    fr: {
-      common: translationsGetters.fr(),
+    es: {
+      common: translationsGetters.es(),
+    },
+    en: {
+      common: translationsGetters.en(),
     },
   },
 });

@@ -9,6 +9,7 @@
 import React from 'react';
 import AppProvider from './src/contexts/contextProvider';
 import Stack from './src/navigation/core';
+import i18n from './src/utils/i18n';
 
 const App = () => {
   return (
